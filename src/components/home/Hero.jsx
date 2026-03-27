@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Mail, MapPin } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import profileImage from '../../../../personal-portfolio/src/assets/images/profile/if.jpg'
+import profileImage from '../../assets/images/profile/if.jpg'
 
 function Hero() {
   return (
