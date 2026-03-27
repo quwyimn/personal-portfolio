@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
-import logisticsFlowImage from '../../../images/Vyn-logistics/flow.png'
-import logisticsFormulaImage from '../../../images/Vyn-logistics/recipe.png'
-import logisticsProcessOverviewImage from '../../../images/Vyn-logistics/process.jpg'
-import logisticsEntityOverviewImage from '../../../images/Vyn-logistics/entity.png'
-import logisticsDemoDashboardImage from '../../../images/Vyn-logistics/demo1.png'
-import logisticsDemoTableImage from '../../../images/Vyn-logistics/demo2.png'
+import logisticsFlowImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/flow.png'
+import logisticsFormulaImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/recipe.png'
+import logisticsProcessOverviewImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/process.jpg'
+import logisticsEntityOverviewImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/entity.png'
+import logisticsDemoDashboardImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/demo1.png'
+import logisticsDemoTableImage from '../../../personal-portfolio/src/assets/images/Vyn-logistics/demo2.png'
 
 const quickFacts = [
   'Project Type: Team Project',

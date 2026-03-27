@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
-import trainingProcessImage from '../../../images/aptos-sybil-detector/process.png'
-import confusionMatrixImage from '../../../images/aptos-sybil-detector/matrix&ROC.png'
-import thresholdTuningImage from '../../../images/aptos-sybil-detector/precision-Recall.png'
-import forcePlotImage from '../../../images/aptos-sybil-detector/force.png'
-import apiSybilImage from '../../../images/aptos-sybil-detector/demo2.png'
-import apiNormalImage from '../../../images/aptos-sybil-detector/demo1.png'
+import trainingProcessImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/process.png'
+import confusionMatrixImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/matrix&ROC.png'
+import thresholdTuningImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/precision-Recall.png'
+import forcePlotImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/force.png'
+import apiSybilImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/demo2.png'
+import apiNormalImage from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/demo1.png'
 
 const quickFacts = [
   'Project Type: Team Project',
