@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
-const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Career', href: '#career' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Tools', href: '#tools' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact', href: '#contact' },
-]
-
-function Navbar() {
+function Navbar({ content, language, setLanguage }) {
   const [open, setOpen] = useState(false)
+
+  const navItems = [
+    { label: content.nav.home, href: '#home' },
+    { label: content.nav.about, href: '#about' },
+    { label: content.nav.career, href: '#career' },
+    { label: content.nav.projects, href: '#projects' },
+    { label: content.nav.skills, href: '#skills' },
+    { label: content.nav.tools, href: '#tools' },
+    { label: content.nav.achievements, href: '#achievements' },
+    { label: content.nav.contact, href: '#contact' },
+  ]
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
@@ -33,12 +33,37 @@ function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <div className="flex overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-2 text-sm font-semibold transition ${
+                language === 'en'
+                  ? 'bg-sky-500 text-white'
+                  : 'text-slate-300 hover:text-sky-300'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('vi')}
+              className={`px-3 py-2 text-sm font-semibold transition ${
+                language === 'vi'
+                  ? 'bg-sky-500 text-white'
+                  : 'text-slate-300 hover:text-sky-300'
+              }`}
+            >
+              VI
+            </button>
+          </div>
+
           <a
             href="/cv.pdf"
             className="inline-flex rounded-xl border border-sky-400/30 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-300 transition hover:border-sky-400 hover:bg-sky-500/20"
           >
-            Download CV
+            {content.nav.downloadCv}
           </a>
         </div>
 
@@ -54,6 +79,31 @@ function Navbar() {
       {open && (
         <div className="border-t border-white/10 bg-slate-950 lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
+            <div className="mb-4 flex overflow-hidden rounded-xl border border-white/10 bg-white/5">
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`flex-1 px-3 py-2 text-sm font-semibold transition ${
+                  language === 'en'
+                    ? 'bg-sky-500 text-white'
+                    : 'text-slate-300 hover:text-sky-300'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('vi')}
+                className={`flex-1 px-3 py-2 text-sm font-semibold transition ${
+                  language === 'vi'
+                    ? 'bg-sky-500 text-white'
+                    : 'text-slate-300 hover:text-sky-300'
+                }`}
+              >
+                VI
+              </button>
+            </div>
+
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -70,7 +120,7 @@ function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex justify-center rounded-xl border border-sky-400/30 bg-sky-500/10 px-4 py-3 text-sm font-semibold text-sky-300 transition hover:border-sky-400 hover:bg-sky-500/20 md:hidden"
             >
-              Download CV
+              {content.nav.downloadCv}
             </a>
           </div>
         </div>

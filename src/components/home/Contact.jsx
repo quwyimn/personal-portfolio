@@ -2,11 +2,11 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import SectionTitle from '../common/SectionTitle'
 
-function Contact() {
+function Contact({ content }) {
   return (
     <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-7xl">
-        <SectionTitle title="Contact" subtitle="Get In Touch" />
+        <SectionTitle title={content.contact.title} subtitle={content.contact.subtitle} />
 
         <div className="glass-card glow-border grid gap-4 rounded-3xl p-6 sm:p-8 md:grid-cols-2">
           <a
@@ -15,7 +15,7 @@ function Contact() {
           >
             <div className="mb-3 flex items-center gap-3 text-sky-400">
               <Mail size={18} />
-              <p className="text-sm uppercase tracking-[0.2em]">Email</p>
+              <p className="text-sm uppercase tracking-[0.2em]">{content.contact.email}</p>
             </div>
             <p className="text-slate-200">paper250805@gmail.com</p>
           </a>
@@ -26,7 +26,7 @@ function Contact() {
           >
             <div className="mb-3 flex items-center gap-3 text-sky-400">
               <Phone size={18} />
-              <p className="text-sm uppercase tracking-[0.2em]">Phone</p>
+              <p className="text-sm uppercase tracking-[0.2em]">{content.contact.phone}</p>
             </div>
             <p className="text-slate-200">0384017934</p>
           </a>
@@ -39,7 +39,7 @@ function Contact() {
           >
             <div className="mb-3 flex items-center gap-3 text-sky-400">
               <FaGithub size={18} />
-              <p className="text-sm uppercase tracking-[0.2em]">GitHub</p>
+              <p className="text-sm uppercase tracking-[0.2em]">{content.contact.github}</p>
             </div>
             <p className="text-slate-200">github.com/quwyimn</p>
           </a>
@@ -52,17 +52,17 @@ function Contact() {
           >
             <div className="mb-3 flex items-center gap-3 text-sky-400">
               <FaLinkedin size={18} />
-              <p className="text-sm uppercase tracking-[0.2em]">LinkedIn</p>
+              <p className="text-sm uppercase tracking-[0.2em]">{content.contact.linkedin}</p>
             </div>
-            <p className="text-slate-200">View LinkedIn Profile</p>
+            <p className="text-slate-200">{content.contact.linkedinText}</p>
           </a>
 
           <div className="glass-card rounded-2xl p-5 md:col-span-2">
             <div className="mb-3 flex items-center gap-3 text-sky-400">
               <MapPin size={18} />
-              <p className="text-sm uppercase tracking-[0.2em]">Location</p>
+              <p className="text-sm uppercase tracking-[0.2em]">{content.contact.location}</p>
             </div>
-            <p className="text-slate-200">Ho Chi Minh City, Vietnam</p>
+            <p className="text-slate-200">{content.contact.locationText}</p>
           </div>
         </div>
       </div>
