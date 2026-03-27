@@ -1,5 +1,5 @@
-import aptosCover from '../../../personal-portfolio/src/assets/images/aptos-sybil-detector/aptos.png'
-import logisticsCover from '../../../personal-portfolio/src/assets/images/Vyn-logistics/vyn-log.png'
+import aptosCover from '../assets/images/aptos-sybil-detector/aptos.png'
+import logisticsCover from '../assets/images/Vyn-logistics/vyn-log.png'
 
 export const projects = [
   {
