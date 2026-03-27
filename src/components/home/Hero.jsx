@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import { Mail, MapPin } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { useState } from 'react'
 import profileImage from '../../assets/images/profile/if.jpg'
 
 function Hero({ content }) {
+  const [cvOpen, setCvOpen] = useState(false)
+
   return (
     <section id="home" className="relative overflow-hidden px-4 pb-20 pt-16 sm:px-6 md:pb-32 md:pt-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.22),transparent_30%),radial-gradient(circle_at_left,rgba(59,130,246,0.16),transparent_25%)]" />
@@ -36,12 +39,44 @@ function Hero({ content }) {
               {content.hero.exploreProjects}
             </a>
 
-            <a
-              href="/cv.pdf"
-              className="rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-slate-200 transition hover:border-sky-400 hover:text-sky-400"
+            <div
+              className="relative"
+              onMouseEnter={() => setCvOpen(true)}
+              onMouseLeave={() => setCvOpen(false)}
             >
-              {content.hero.downloadCv}
-            </a>
+              <button
+                type="button"
+                onClick={() => setCvOpen((prev) => !prev)}
+                className="w-full rounded-2xl border border-white/15 px-6 py-3 text-center font-semibold text-slate-200 transition hover:border-sky-400 hover:text-sky-400 sm:w-auto"
+              >
+                {content.hero.downloadCv}
+              </button>
+
+              <div
+                className={`absolute left-0 top-full z-20 w-48 overflow-hidden rounded-b-2xl border border-white/10 bg-slate-950/95 shadow-2xl backdrop-blur-xl transition-all duration-200 ${
+                  cvOpen
+                    ? 'pointer-events-auto opacity-100 translate-y-0'
+                    : 'pointer-events-none opacity-0 -translate-y-1'
+                }`}
+              >
+                <a
+                  href="/cv_en.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-sky-300"
+                >
+                  {content.hero.cvEnglish}
+                </a>
+                <a
+                  href="/cv_vi.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-sky-300"
+                >
+                  {content.hero.cvVietnamese}
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
